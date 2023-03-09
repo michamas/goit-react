@@ -1,12 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+// props:
+// name
+function Welcome(props) {
+  //destrukturyzacja
+  const { name } = props;
+
+  const tmpString = `Hello, ${name}`;
+  return <div>Hello, {name}</div>;
+}
+
+function Product(props) {
+  const { price, name, description } = props;
+
+  return <div></div>;
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <Welcome name="General Kenobi" age="230" />
+        <Welcome name="Dr Strange" favourite="dog" />
+
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        {/* <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -16,7 +35,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
